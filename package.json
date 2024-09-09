@@ -1,0 +1,38 @@
+{
+  "name": "kawanlama-todo",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "migrate:create": "npx sequelize-cli db:create",
+    "migrate:up": "npx sequelize-cli db:migrate",
+    "migrate:undo": "npx sequelize-cli db:migrate:undo"
+  },
+  "dependencies": {
+    "@nuxt/icon": "^1.5.1",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@pinia/nuxt": "^0.5.4",
+    "bcrypt": "^5.1.1",
+    "nuxt": "^3.13.0",
+    "nuxt-auth-utils": "^0.3.6",
+    "nuxt-toastify": "^1.0.0",
+    "pg": "^8.12.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.3",
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.2.0",
+    "@iconify-json/mdi": "^1.2.0",
+    "babel-register": "^6.26.0",
+    "eslint": "^9.9.1",
+    "sequelize-cli": "^6.6.2",
+    "typescript": "^5.5.4"
+  }
+}
