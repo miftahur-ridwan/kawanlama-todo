@@ -13,6 +13,10 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 
 ## Setup
 
+Clone this repository.
+
+Adjust value `DB_USERNAME` & `DB_PASSWORD` with your config in `.env` file.
+
 Make sure to install the dependencies:
 
 ```bash
