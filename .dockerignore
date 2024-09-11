@@ -1,5 +1,8 @@
-node_modules
-.output
 .nuxt
+.output
 .git
-docs
+node_modules
+.vscode
+
+.gitignore
+README.md

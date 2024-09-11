@@ -24,8 +24,7 @@
     "nuxt-toastify": "^1.0.0",
     "pg": "^8.12.0",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.37.3",
-    "vue": "latest"
+    "sequelize": "^6.37.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.2.0",

@@ -1,24 +1,40 @@
-version: "3"
 services:
   postgres:
-    image: 'postgres:latest'
+    image: postgres
+    networks:
+      - examplenetwork
     restart: always
+    # healthcheck:
+    #   test: [ "CMD", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}" ]
+    #   interval: 10s
+    #   timeout: 10s
+    #   retries: 5
+    volumes:
+      - postgresql:/var/lib/postgresql
+      - postgresql_data:/var/lib/postgresql/data
     environment:
+      - POSTGRES_DB=kawanlama-todo
+      - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-    ports:
-      - 5432:5432
-    expose:
-      - 5432
+      - POSTGRES_HOST=postgres
   nuxt:
-    build: .
+    build: 
+      context : .
+      dockerfile: Dockerfile
     ports:
-      - '3000:3000'
+      - "1955:1955"
     depends_on:
       - postgres
-    environment:
-      - PORT=3000
-      - NODE_ENV=development
-      - DB_USERNAME=postgres
-      - DB_PASSWORD=postgres
-      - DB_DATABASE=kawanlama-todo
-      - NUXT_SESSION_PASSWORD=password-with-at-least-32-charactersNUXT_SESSION_PASSWORD=aksdlasndkk123kasldkjalsdwdiawak
+    # depends_on:
+    #   postgres:
+    #     condition: service_healthy
+    networks:
+      - examplenetwork
+    env_file: ./.env
+
+networks:
+  examplenetwork: 
+
+volumes:
+  postgresql:
+  postgresql_data:

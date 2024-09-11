@@ -123,7 +123,7 @@ bun run preview
 
 ## Docker
 
-(Still have issue) Running with docker:
+Running with docker:
 
 ```bash
 docker-compose up --build
